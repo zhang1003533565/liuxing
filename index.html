@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>2025年倒计时烟花</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        #countdown {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-size: 4.5em;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+            font-weight: bold;
+        }
+        #title {
+            position: relative;
+            z-index: 2;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 1000%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 20s linear infinite;
+            font-weight: bold;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff,
+                           0 0 10px #fff,
+                           0 0 15px #e60073,
+                           0 0 20px #e60073,
+                           0 0 25px #e60073;
+            }
+            to {
+                text-shadow: 0 0 10px #fff,
+                           0 0 20px #ff4da6,
+                           0 0 30px #ff4da6,
+                           0 0 40px #ff4da6,
+                           0 0 50px #ff4da6;
+            }
+        }
+
+        @keyframes rainbow { 
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="title">距离2025年还有</div>
+    <div id="countdown"></div>
+    <canvas id="fireworks"></canvas>
+    <audio id="fireworkSound" src="https://assets.mixkit.co/sfx/preview/mixkit-firework-explosion-393.mp3" preload="auto"></audio>
+    <script src="fireworks.js"></script>
+</body>
+</html> 
